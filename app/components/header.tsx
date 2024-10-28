@@ -17,21 +17,32 @@ const Header = () => {
     const name : string = "<ARTHURpvn />";
     return (
         <header className="flex justify-around items-center h-[8%] ">
-            <a className={`font-bold text-xl ${geistMono.className} text-blue-400`}> {name} </a>
+            <a href="" className={`font-bold text-xl ${geistMono.className} text-orange-400`}> {name} </a>
 
             <nav className={`gap-6 flex ${geistSans.className} tracking-widest font-normal`}>
-                <a href="">Sobre</a>
-                <a href="">Projetos</a>
-                <a href="">Projetos</a>
-                <a href="">Contato</a>
+                <div className="group">
+                    <a href="" className="hover:text-orange-200 duration-300">Sobre</a>
+                </div>
+
+                <div className="group">
+                    <a href="" className="hover:text-orange-200 duration-300">Projetos</a>
+                </div>
+
+                <div className="group">
+                    <a href="" className="hover:text-orange-200 duration-300">Projetos</a>
+                </div>
+
+                <div className="group">
+                    <a href="" className="hover:text-orange-200 duration-300">Contato</a>
+                </div>   
             </nav>
 
             <div className="flex items-center gap-12">
-                <h2 className={`font-bold ${geistMono.className}`}>English</h2>
-                <MdSunny />
+                <h2 className={`font-bold ${geistMono.className} cursor-pointer`}>English</h2>
+                <MdSunny className="cursor-pointer"/>
             </div>
         </header>
     );
 }
 
-export default Header
+export default Header;

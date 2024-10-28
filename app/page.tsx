@@ -6,7 +6,10 @@ import { IoLogoGithub, IoLogoInstagram } from "react-icons/io";
 
 import Header from "./components/header";
 import Ability from "./components/abilty";
-import Experience from "./components/experiencia";
+import Experience from "./components/experience";
+import Footer from "./components/footer";
+import Projects from "./components/projects";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -56,6 +59,20 @@ const Home = () => {
             <Experience />
           </div>
       </section>
+
+      <section className="flex flex-col mx-auto mt-8 w-1/2">
+        <h1 className={`${geistSans.className} text-4xl font-bold`}> Meus Projetos </h1>
+
+        <Projects indexValue={0}/>
+        <Projects indexValue={1}/>
+
+        <div className="flex">
+          
+          <a href="" className={`${geistSans.className} text-blue-400 text-lg mt-3`} >Mais...</a>
+        </div>
+      </section>
+
+      <Footer />
     </main>
   );
 }

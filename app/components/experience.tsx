@@ -24,7 +24,10 @@ const Experience = () => {
                     return (
                         <li key={index} className="flex flex-col mb-12">
                             <header className="mb-3">
-                                <a href={experience.link} className={`${geistSans.className} text-2xl font-bold text-blue-400`}> ./{experience.name} </a>
+                                <div className=" group flex flex-col w-max">
+                                    <a href={experience.link} className={`${geistSans.className} text-2xl w-auto font-bold text-blue-400`}> ./{experience.name} </a>
+                                    <div className="h-1 w-full bg-blue-400 scale-x-0 group-hover:scale-x-100 duration-300 ease-in"></div>
+                                </div>
                                 <p className={`${geistMono.className} text-sm text-gray-500`}>{experience.date}</p>
                             </header>
                             <p className={`${geistSans.className} text-lg text-gray-300`}> {experience.description} </p>

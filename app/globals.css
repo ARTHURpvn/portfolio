@@ -3,15 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --background: #9e0000;
-  --foreground: #171717;
+  --background: #0c0c0c;
+  --foreground: #17171700;
   --duration: 50s;
   --gap: 1rem;
   --tw-gradient-stops: var(--background), var(--foreground);
-  --tw-gradient-from: 1;
-  --tw-gradient-to: 0;
-  --tw-gradient-from-position: var(--tw-gradient-from);
-  --tw-gradient-to-position: var(--tw-gradient-to);
 }
 
 body {
@@ -32,18 +28,4 @@ body {
 
 .animate-marquee {
   animation: marquee var(--duration) linear infinite
-}
-
-.bg-gradient-to-l {
-  background-image: linear-gradient(to left, var(--tw-gradient-stops))
-}
-
-.bg-gradient-to-r {
-  background-image: linear-gradient(to right, var(--tw-gradient-stops))
-}
-
-.from-background {
-  --tw-gradient-from: #0c0c0c var(--tw-gradient-from-position);
-  --tw-gradient-to: rgba(0, 0, 0, 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
 }
