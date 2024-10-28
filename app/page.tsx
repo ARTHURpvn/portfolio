@@ -36,7 +36,7 @@ const Home = () => {
           <nav className="flex gap-5">
             <a href="" className="flex items-center rounded-lg border border-gray-600 p-3"> <MdOutlineEmail className="scale-150"/> </a>
             <a href="https://github.com/ARTHURpvn" className="flex items-center rounded-lg border border-gray-600 p-3"> <IoLogoGithub className="scale-150"/> </a>
-            <a href="" className="flex items-center rounded-lg border border-gray-600 p-3"> <IoLogoInstagram className="scale-150"/> </a>
+            <a href="https://www.instagram.com/arthur.pvn/" className="flex items-center rounded-lg border border-gray-600 p-3"> <IoLogoInstagram className="scale-150"/> </a>
           </nav>
         </div>
 
