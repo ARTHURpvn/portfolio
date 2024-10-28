@@ -3,19 +3,47 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #9e0000;
   --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --duration: 50s;
+  --gap: 1rem;
+  --tw-gradient-stops: var(--background), var(--foreground);
+  --tw-gradient-from: 1;
+  --tw-gradient-to: 0;
+  --tw-gradient-from-position: var(--tw-gradient-from);
+  --tw-gradient-to-position: var(--tw-gradient-to);
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: #ededed;
+  background: #0c0c0c;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0)
+  }
+
+  to {
+    transform: translateX(calc(-100% - var(--gap)))
+  }
+}
+
+.animate-marquee {
+  animation: marquee var(--duration) linear infinite
+}
+
+.bg-gradient-to-l {
+  background-image: linear-gradient(to left, var(--tw-gradient-stops))
+}
+
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops))
+}
+
+.from-background {
+  --tw-gradient-from: #0c0c0c var(--tw-gradient-from-position);
+  --tw-gradient-to: rgba(0, 0, 0, 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
 }
