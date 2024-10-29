@@ -1,8 +1,8 @@
 'use client';
 
 import localFont from "next/font/local";
-import { MdOutlineEmail, MdLocationPin  } from "react-icons/md";
-import { IoLogoGithub, IoLogoInstagram } from "react-icons/io";
+import { MdLocationPin  } from "react-icons/md";
+import { IoLogoGithub, IoLogoInstagram,IoLogoLinkedin  } from "react-icons/io";
 
 import Header from "./components/header";
 import Ability from "./components/abilty";
@@ -34,13 +34,13 @@ const Home = () => {
           <h1 className={`${geistSans.className} text-4xl font-bold max-[580px]:text-2xl`}>Arthur Pavan</h1>
 
           <nav className="flex gap-5 max-[580px]:gap-2">
-            <a href="" className="flex items-center rounded-lg border border-gray-600 p-3"> <MdOutlineEmail className="scale-150 max-[580px]:scale-125"/> </a>
+            <a href="https://www.linkedin.com/in/arthur-dos-santos-pavan-b39386243/" className="flex items-center rounded-lg border border-gray-600 p-3"> <IoLogoLinkedin className="scale-150 max-[580px]:scale-125"/> </a>
             <a href="https://github.com/ARTHURpvn" className="flex items-center rounded-lg border border-gray-600 p-3"> <IoLogoGithub className="scale-150 max-[580px]:scale-125"/> </a>
             <a href="https://www.instagram.com/arthur.pvn/" className="flex items-center rounded-lg border border-gray-600 p-3"> <IoLogoInstagram className="scale-150 max-[580px]:scale-125"/> </a>
           </nav>
         </div>
 
-        <div className={`${geistMono.className} flex gap-2 items-center text-gray-500 mb-6 max-[580px]:mb-3 max-[580px]:text-[.9rem]`}>
+        <div className={`${geistMono.className} flex gap-2 items-center text-gray-900 dark:text-gray-500 mb-6 max-[580px]:mb-3 max-[580px]:text-[.9rem]`}>
             <MdLocationPin />
             <p> São Paulo, Brasil </p>
         </div>
@@ -68,7 +68,7 @@ const Home = () => {
 
         <div className="flex">
           
-          <a href="" className={`${geistSans.className} text-blue-400 text-lg mt-3 max-[580px]:text-[.9rem]`} > Mais... </a>
+          <a href="" className={`${geistSans.className} text-blue-600 dark:text-blue-400 text-lg mt-3 max-[580px]:text-[.9rem]`} > Mais... </a>
         </div>
       </section>
 

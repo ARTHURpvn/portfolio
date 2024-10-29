@@ -25,7 +25,7 @@ interface ProjectsProps {
 
 const Projects = ({indexValue}: ProjectsProps)  => {
     return (
-        <div className={`group flex flex-col mx-auto relative mt-6 overflow-hidden w-full h-[55vh] max-[580px]:h-[50vh] cursor-pointer rounded-lg border border-gray-600 bg-cover ${arrayProjects[indexValue].pos} bg-no-repeat`}
+        <div className={`group flex flex-col mx-auto relative text-white mt-6 overflow-hidden w-full h-[55vh] max-[580px]:h-[50vh] cursor-pointer rounded-lg border border-gray-600 bg-cover ${arrayProjects[indexValue].pos} bg-no-repeat`}
         style={{backgroundImage: `url(/${arrayProjects[indexValue].image})`}}>
             <span className="bg-gradient-to-t absolute from-[#0e0e0e] from-50% to-transparent w-full h-full translate-y-[65%] group-hover:translate-y-[55%] max-[580px]:translate-y-[50%] max-[580px]:group-hover:translate-y-[45%] duration-500"></span>
             <span className="bg-gradient-to-r absolute from-[#494a68] to-transparent w-full h-full -translate-x-[75%] group-hover:-translate-x-[70%] duration-500"></span>

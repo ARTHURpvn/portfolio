@@ -3,17 +3,26 @@
 @tailwind utilities;
 
 :root {
-  --background: #0c0c0c;
-  --foreground: #17171700;
+  --background: #ffffff;
+  --foreground: #f0f0f000;
+  --color: #000000;
   --duration: 50s;
   --gap: 1rem;
   --tw-gradient-stops: var(--background), var(--foreground);
 }
 
+.dark {
+  --background: #0f0f0f;
+  --foreground: #17171700;
+  --color: #ffffff;
+  --tw-gradient-stops: var(--background), var(--foreground);
+}
+
 body {
-  color: #ededed;
-  background: #0c0c0c;
+  color: var(--color);
+  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  transition: all 500ms ease-in-out;
 }
 
 @keyframes marquee {
