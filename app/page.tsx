@@ -29,38 +29,38 @@ const Home = () => {
     <main className={`h-screen w-5/6 mx-auto`}>
       <Header />
 
-      <section className="flex flex-col mx-auto mt-16 border rounded-lg border-gray-600 w-1/2 p-6">
+      <section className="flex flex-col mx-auto mt-16 border rounded-lg border-gray-600 w-1/2 max-[580px]:w-5/6 max-[580px]:p-3 p-6">
         <div className="flex items-center justify-between w-full">
-          <h1 className={`${geistSans.className} text-4xl font-bold`}>Arthur Pavan</h1>
+          <h1 className={`${geistSans.className} text-4xl font-bold max-[580px]:text-2xl`}>Arthur Pavan</h1>
 
-          <nav className="flex gap-5">
-            <a href="" className="flex items-center rounded-lg border border-gray-600 p-3"> <MdOutlineEmail className="scale-150"/> </a>
-            <a href="https://github.com/ARTHURpvn" className="flex items-center rounded-lg border border-gray-600 p-3"> <IoLogoGithub className="scale-150"/> </a>
-            <a href="https://www.instagram.com/arthur.pvn/" className="flex items-center rounded-lg border border-gray-600 p-3"> <IoLogoInstagram className="scale-150"/> </a>
+          <nav className="flex gap-5 max-[580px]:gap-2">
+            <a href="" className="flex items-center rounded-lg border border-gray-600 p-3"> <MdOutlineEmail className="scale-150 max-[580px]:scale-125"/> </a>
+            <a href="https://github.com/ARTHURpvn" className="flex items-center rounded-lg border border-gray-600 p-3"> <IoLogoGithub className="scale-150 max-[580px]:scale-125"/> </a>
+            <a href="https://www.instagram.com/arthur.pvn/" className="flex items-center rounded-lg border border-gray-600 p-3"> <IoLogoInstagram className="scale-150 max-[580px]:scale-125"/> </a>
           </nav>
         </div>
 
-        <div className={`${geistMono.className} flex gap-2 items-center text-gray-500 mb-6`}>
+        <div className={`${geistMono.className} flex gap-2 items-center text-gray-500 mb-6 max-[580px]:mb-3 max-[580px]:text-[.9rem]`}>
             <MdLocationPin />
             <p> São Paulo, Brasil </p>
         </div>
 
-        <p className={`${geistSans.className} text-lg`}> Olá! Tenho 18 anos, sou programador front-end à 3 anos, consigo transformar suas ideias em projetos ágeis e modernos. </p>
+        <p className={`${geistSans.className} text-lg  max-[580px]:text-[1rem]`}> Olá! Tenho 18 anos, sou programador front-end há 3 anos, consigo transformar suas ideias em projetos modernos. </p>
       </section>
 
-      <section className="flex flex-col mx-auto mt-20 w-1/2">
+      <section className="flex flex-col mx-auto mt-20 w-1/2 max-[580px]:w-5/6">
         <h1 className={`${geistSans.className} text-4xl font-bold`}> Habilidades </h1>
         <Ability />
       </section>
 
-      <section className="flex flex-col mx-auto mt-20 w-1/2">
+      <section className="flex flex-col mx-auto mt-20 w-1/2 max-[580px]:w-5/6">
         <h1 className={`${geistSans.className} text-4xl font-bold`}> Experiência </h1>
           <div>
             <Experience />
           </div>
       </section>
 
-      <section className="flex flex-col mx-auto mt-8 w-1/2">
+      <section className="flex flex-col mx-auto mt-8 w-1/2 max-[580px]:w-5/6">
         <h1 className={`${geistSans.className} text-4xl font-bold`}> Meus Projetos </h1>
 
         <Projects indexValue={0}/>
@@ -68,7 +68,7 @@ const Home = () => {
 
         <div className="flex">
           
-          <a href="" className={`${geistSans.className} text-blue-400 text-lg mt-3`} >Mais...</a>
+          <a href="" className={`${geistSans.className} text-blue-400 text-lg mt-3 max-[580px]:text-[.9rem]`} > Mais... </a>
         </div>
       </section>
 

@@ -22,15 +22,15 @@ const Experience = () => {
             {experienciasArray &&
                 experienciasArray.map((experience, index) => {
                     return (
-                        <li key={index} className="flex flex-col mb-12">
+                        <li key={index} className="flex flex-col mb-12  max-[580px]:mb-8">
                             <header className="mb-3">
                                 <div className=" group flex flex-col w-max">
-                                    <a href={experience.link} className={`${geistSans.className} text-2xl w-auto font-bold text-blue-400`}> ./{experience.name} </a>
-                                    <div className="h-1 w-full bg-blue-400 scale-x-0 group-hover:scale-x-100 duration-300 ease-in"></div>
+                                    <a href={experience.link} className={`${geistSans.className} text-2xl max-[580px]:text-xl w-auto font-bold text-blue-400`}> ./{experience.name} </a>
+                                    <div className="h-1 max-[580px]:h-[3px] w-full bg-blue-400 scale-x-0 group-hover:scale-x-100 duration-300 ease-in"></div>
                                 </div>
-                                <p className={`${geistMono.className} text-sm text-gray-500`}>{experience.date}</p>
+                                <p className={`${geistMono.className} text-sm max-[580px]:text-[0.8rem] text-gray-500`}>{experience.date}</p>
                             </header>
-                            <p className={`${geistSans.className} text-lg text-gray-300`}> {experience.description} </p>
+                            <p className={`${geistSans.className} text-lg max-[580px]:text-[1rem] text-gray-300`}> {experience.description} </p>
                         </li>
                     )
                 })}
