@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 const Theme = () => {
     const [theme, setTheme] = useState<string>("");
 
-    // Configura o tema inicial ao carregar a página
     useEffect(() => {
         const storedTheme = localStorage.getItem('theme');
         
@@ -23,6 +22,7 @@ const Theme = () => {
     useEffect(() => {
         if (theme) {
             if (theme === 'dark') {
+                
                 document.documentElement.classList.add('dark');
                 document.documentElement.classList.remove('light');
             } else {
@@ -32,6 +32,7 @@ const Theme = () => {
             localStorage.setItem('theme', theme);
         }
     }, [theme]);
+
 
     // Alterna entre claro e escuro
     const toggleTheme = () => {

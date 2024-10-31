@@ -1,4 +1,7 @@
 import localFont from "next/font/local";
+import { translateArray } from "./translate";
+import { useEffect, useState } from "react";
+
 const geistSans = localFont({
     src: "../fonts/GeistVF.woff",
     variable: "--font-geist-sans",
@@ -10,17 +13,24 @@ const geistSans = localFont({
     variable: "--font-geist-mono",
     weight: "100 900",
   });
-
-const experienciasArray : Array<{name: string, link: string, date: string, description: string}> = [
-    {name: "Site para Designer", link: "https://clara-design.vercel.app/", date: "Agosto, 2024 - Setembro, 2024", description: "Web Site feito para uma designer, responsivo e com troca de tema. O projeto foi Finalizado em Setembro"},
-    {name: "Celular", link: "https://celular-react.vercel.app/", date: "Julho, 2024 - Em andamento", description: "Projeto feito para ser usado em um jogo, onde irá simular um celular real. O projeto ainda esta em andamento"},
-];
   
-const Experience = () => {
+const Experience = () => {  
+    const [translate, setTranslate] = useState(translateArray.find((item) => item.lang === 'pt-br')?.translate.experience);
+    const useLocalStorageChecker = () => {
+      useEffect(() => {
+          const checkLocalStorage = () => {
+              const value = localStorage.getItem('lang');
+              setTranslate(translateArray.find((item) => item.lang === value)?.translate.experience)
+          };
+          const intervalId = setInterval(checkLocalStorage, 1000);
+          return () => clearInterval(intervalId);
+      }, []);
+    };
+    useLocalStorageChecker();
     return (
         <ul className="mt-6 mx-6">
-            {experienciasArray &&
-                experienciasArray.map((experience, index) => {
+            {translate &&
+                translate.map((experience: { link: string ; name: string ; date: string ; description: string  }, index: number) => {
                     return (
                         <li key={index} className="flex flex-col mb-12  max-[580px]:mb-8">
                             <header className="mb-3">
