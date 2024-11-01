@@ -1,25 +1,15 @@
-import { useEffect, useState } from "react"
-import localFont from "next/font/local";
 import { SiNextdotjs, SiReact, SiTailwindcss, SiTypescript } from "react-icons/si";
-
-const geistMono = localFont({
-    src: "../fonts/GeistMonoVF.woff",
-    variable: "--font-geist-mono",
-    weight: "100 900",
-});
 
 type Tecnology = {
     name: string;
     icon: JSX.Element;
 };
-
 type Experience = {
     name: string;
     link: string;
     date: string;
     description: string;
 };
-
 type Project = {
     name: string;
     link: string;
@@ -28,24 +18,35 @@ type Project = {
     image: string;
     pos: string;
 };
-
+type Titles = {
+    about?: string;
+    ability?: string;
+    experience: string;
+    projects?: string;
+}
+type Main = {
+    country: string;
+    desc: string;
+    more: string;
+};
+type Resume = {
+    name: string;
+}
 type Translate = {
     header: {
         about: string;
         projects: string;
         contact: string;
     };
-    titles: {
-        ability: string;
-        experience: string;
-        projects: string;
-    };
-    main: {
-        country: string;
-        desc: string;
-        more: string;
+    home: {
+        titles: Titles;
+        main: Main;
     };
     experience: Experience[];
+    about: {
+        titles: Titles;
+        resume: Resume[];
+    }
     projects: Project[];
     seeProject: string;
     footer: {
@@ -55,7 +56,6 @@ type Translate = {
         projects: string;
     };
 };
-
 type LanguageTranslate = {
     lang: string;
     translate: Translate;
@@ -70,15 +70,17 @@ export const translateArray: LanguageTranslate[] = [
                 projects: "Projetos",
                 contact: "Contato",
             },
-            titles: {
-                ability: "Habilidades",
-                experience: "Experiência",
-                projects: "Meus Projetos",
-            },
-            main: {
-                country: "São Paulo, Brasil",
-                desc: "Olá! Tenho 18 anos, sou programador front-end há 3 anos, consigo transformar suas ideias em projetos modernos.",
-                more: "Mais...",
+            home: {
+                titles: {
+                    ability: "Habilidades",
+                    experience: "Experiência",
+                    projects: "Meus Projetos",
+                },
+                main: {
+                    country: "São Paulo, Brasil",
+                    desc: "Olá! Tenho 18 anos, sou programador front-end há 3 anos, consigo transformar suas ideias em projetos modernos.",
+                    more: "Mais...",
+                },
             },
             experience: [
                 {
@@ -94,6 +96,23 @@ export const translateArray: LanguageTranslate[] = [
                     description: "Projeto feito para ser usado em um jogo, onde irá simular um celular real. O projeto ainda está em andamento",
                 },
             ],
+            about: {
+                titles: {
+                    about: "Sobre Mim",
+                    experience: "Experiência"
+                },
+                resume: [
+                    {
+                        name: "Desde pequeno, sou fascinado pelo mundo da tecnologia. Quando criança, eu não sabia programar ou consertar o computador, mas sempre observava atentamente o técnico quando ele era chamado, aprendendo um pouco sobre como as coisas funcionavam."
+                    },
+                    {
+                        name: "Comecei a me identificar como desenvolvedor front-end durante o ensino médio técnico. Em 2021, iniciei meus estudos em lógica de programação e aprendi HTML e CSS. No ano seguinte, em 2022, aprofundei-me em JavaScript, buscando melhorar cada vez mais minhas habilidades no desenvolvimento de sites."
+                    },
+                    {
+                        name: "Em 2024, comecei a estudar Next.js e React, e foi aí que me apaixonei ainda mais pelo mundo da programação. Identifiquei-me com essas tecnologias 'modernas' e passei a desenvolver projetos pessoais, explorando novas possibilidades no desenvolvimento web."
+                    },
+                ],
+            },
             projects: [
                 {
                     name: "Site para Designer",
@@ -139,15 +158,17 @@ export const translateArray: LanguageTranslate[] = [
                 projects: "Project",
                 contact: "Contact",
             },
-            titles: {
-                ability: "Ability",
-                experience: "Experience",
-                projects: "My projects",
-            },
-            main: {
-                country: "Sao Paulo, Brazil",
-                desc: "Hello there! I'm 18 years old, I'm a front-end developer for 3 years, I can transform your ideas into modern projects.",
-                more: "More...",
+            home: {
+                titles: {
+                    ability: "Ability",
+                    experience: "Experience",
+                    projects: "My projects",
+                },
+                main: {
+                    country: "Sao Paulo, Brazil",
+                    desc: "Hello there! I'm 18 years old, I'm a front-end developer for 3 years, I can transform your ideas into modern projects.",
+                    more: "More...",
+                },
             },
             experience: [
                 {
@@ -192,6 +213,23 @@ export const translateArray: LanguageTranslate[] = [
                 },
             ],
             seeProject: "See Project",
+            about: {
+                titles: {
+                    about: "About me",
+                    experience: "Experience",
+                },
+                resume: [
+                    {
+                        name: "Since I was young, I have been fascinated by the world of technology. As a child, I didn’t know how to program or fix a computer, but whenever a technician was called, I would watch carefully and learn a bit about how things worked."
+                    },
+                    {
+                        name: "I began to identify as a front-end developer during technical high school. In 2021, I started studying programming logic and learning HTML and CSS. The following year, in 2022, I delved into JavaScript, striving to continuously improve my web development skills."
+                    },
+                    {
+                        name: "n 2024, I began studying Next.js and React, and that’s when I fell even more in love with the programming world. I connected with these “modern” technologies and started developing personal projects, exploring new possibilities in web development."
+                    },
+                ],
+            },
             footer: {
                 copy: "Made in Sao Paulo, Brazil",
                 desc: "Builded with",
@@ -201,22 +239,3 @@ export const translateArray: LanguageTranslate[] = [
         },
     },
 ];
-const Translate = () => {
-    const [language, setLanguage] = useState<string >("pt-br");
-    const toggleLanguage = () => {
-        setLanguage(localStorage.getItem("lang") === "pt-br" ? "en" : "pt-br");
-        console.log(localStorage.getItem("lang"))
-    };
-
-    useEffect(() => {
-        localStorage.setItem("lang", language);
-    }, [language])
-
-    return (
-        <a className={`font-bold ${geistMono.className} cursor-pointer max-[580px]:font-semibold text-sm w-24 text-end hover:text-orange-400 dark:hover:text-orange-200 duration-300`} onClick={toggleLanguage}>
-            {language == "pt-br" ? "English" : "Português"}
-        </a>
-
-    )
-}
-export default Translate;

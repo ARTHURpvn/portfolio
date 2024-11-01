@@ -3,17 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #f0f0f000;
-  --color: #000000;
+  --background: #c3c7d3;
+  --foreground: #ffffff00;
+  --scrool-bg: #9ca0aa;
+  --primary: #fb923c;
+  --hover: #e77b22;
+  --color: #131313;
   --duration: 50s;
   --gap: 1rem;
   --tw-gradient-stops: var(--background), var(--foreground);
 }
 
 .dark {
-  --background: #0f0f0f;
-  --foreground: #17171700;
+  --background: #111111;
+  --scrool-bg: #272727;
+  --foreground: #ffffff00;
   --color: #ffffff;
   --tw-gradient-stops: var(--background), var(--foreground);
 }
@@ -37,4 +41,20 @@ body {
 
 .animate-marquee {
   animation: marquee var(--duration) linear infinite
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+
+}
+::-webkit-scrollbar-track {
+  background-color: var(--scrool-bg);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 35px;
+  background-color: var(--primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--hover);
 }

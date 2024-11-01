@@ -1,7 +1,10 @@
+'use client';
 import localFont from "next/font/local";
 import Theme from "./theme";
 import { useState, useEffect } from "react";
-import Translate, { translateArray } from "./translate";
+import { translateArray } from "./translate";
+import Translate from "./lang";
+import Link from "next/link";
 
 const geistSans = localFont({
     src: "../fonts/GeistVF.woff",
@@ -15,7 +18,8 @@ const geistMono = localFont({
     weight: "100 900",
 });
   
-const Header = () => {
+
+const Header = ({page}: {page: string}) => {
     const [translate, setTranslate] = useState(translateArray.find((item) => item.lang === 'pt-br')?.translate);
     const useLocalStorageChecker = () => {
       useEffect(() => {
@@ -33,10 +37,10 @@ const Header = () => {
     const name : string = "<ARTHURpvn />";
     return (
         <header className="flex justify-around items-center h-[8%] relative">
-            <a href="" className={`font-bold text-xl ${geistMono.className} dark:text-orange-400 text-orange-600 max-[580px]:text-md font-semibold`}> {name} </a>
+            <Link href="/" className={`font-bold text-xl duration-300 hover:text-orange-400 ${geistMono.className}  ${page === "home" && "text-orange-600 dark:text-orange-400"} max-[580px]:text-md font-semibold`}> {name} </Link>
 
             <nav className={`gap-6 flex ${geistSans.className} tracking-widest max-[580px]:absolute max-[580px]:-bottom-6`}>
-                    <a href="" className="hover:text-orange-400 dark:hover:text-orange-200 duration-300"> {translate?.header.about} </a>
+                    <a href="/about" className={`hover:text-orange-400 ${page === "about" && "text-orange-600 font-semibold dark:text-orange-400"} dark:hover:text-orange-200 duration-300`}> {translate?.header.about} </a>
                     <a href="" className="hover:text-orange-400 dark:hover:text-orange-200 duration-300"> {translate?.header.projects}</a>
                     <a href="" className="hover:text-orange-400 dark:hover:text-orange-200 duration-300"> {translate?.header.contact}</a>
             </nav>

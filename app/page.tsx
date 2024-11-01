@@ -25,11 +25,11 @@ const geistMono = localFont({
 });
 
 const Home = () => {
-  const [translate, setTranslate] = useState(translateArray.find((item) => item.lang === 'pt-br')?.translate);
+  const [translate, setTranslate] = useState(translateArray.find((item) => item.lang === 'pt-br')?.translate.home);
   useEffect(() => {
       const checkLocalStorage = () => {
           const value = localStorage.getItem('lang');
-          setTranslate(translateArray.find((item) => item.lang === value)?.translate)
+          setTranslate(translateArray.find((item) => item.lang === value)?.translate.home)
       };
       const intervalId = setInterval(checkLocalStorage, 1000);
       return () => clearInterval(intervalId);
@@ -37,7 +37,7 @@ const Home = () => {
 
   return (
     <main className={`h-screen w-5/6 mx-auto`}>
-      <Header />
+      <Header page="home"/>
 
       <section className="flex flex-col mx-auto mt-16 border rounded-lg border-gray-600 w-1/2 max-[580px]:w-5/6 max-[580px]:p-3 p-6">
         <div className="flex items-center justify-between w-full">
