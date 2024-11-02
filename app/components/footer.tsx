@@ -1,3 +1,4 @@
+'use client';
 import localFont from "next/font/local";
 import { FaRegCopyright, FaHeart  } from "react-icons/fa";
 import { translateArray } from "./translate";

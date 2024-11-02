@@ -15,18 +15,15 @@ interface ProjectsProps {
 
 const Projects = ({indexValue}: ProjectsProps)  => {
     const [translate, setTranslate] = useState(translateArray.find((item) => item.lang === 'pt-br')?.translate);
-    const useLocalStorageChecker = () => {
-      useEffect(() => {
-          const checkLocalStorage = () => {
-              const value = localStorage.getItem('lang');
-              setTranslate(translateArray.find((item) => item.lang === value)?.translate)
-              
-          };
-          const intervalId = setInterval(checkLocalStorage, 1000);
-          return () => clearInterval(intervalId);
-      }, []);
-    };
-    useLocalStorageChecker();
+    useEffect(() => {
+        const checkLocalStorage = () => {
+            const value = localStorage.getItem('lang');
+            setTranslate(translateArray.find((item) => item.lang === value)?.translate)
+            
+        };
+        const intervalId = setInterval(checkLocalStorage, 1000);
+        return () => clearInterval(intervalId);
+    }, []);
     return (
         translate && (
             <div className={`group flex flex-col mx-auto relative text-white mt-6 overflow-hidden w-full h-[55vh] max-[580px]:h-[50vh] cursor-pointer rounded-lg border border-gray-600 bg-cover ${translate.projects[indexValue].pos} bg-no-repeat`}
@@ -63,4 +60,25 @@ const Projects = ({indexValue}: ProjectsProps)  => {
     )
 }
 
+const AllProjects = () => {
+    const [translate, setTranslate] = useState(translateArray.find((item) => item.lang === 'pt-br')?.translate);
+    useEffect(() => {
+        const checkLocalStorage = () => {
+            const value = localStorage.getItem('lang');
+            setTranslate(translateArray.find((item) => item.lang === value)?.translate)
+        };
+        const intervalId = setInterval(checkLocalStorage, 1000);
+        return () => clearInterval(intervalId);
+    }, []);
+
+    return (
+        translate?.projects.map((item, index) => {
+            return (
+                <Projects key={index} indexValue={index} />
+            )
+        })
+    )
+}
+
+export { AllProjects }
 export default Projects

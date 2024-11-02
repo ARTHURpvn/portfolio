@@ -46,8 +46,12 @@ type Translate = {
     about: {
         titles: Titles;
         resume: Resume[];
-    }
+    };
     projects: Project[];
+    contact: {
+        title: string;
+        content: string;
+    };
     seeProject: string;
     footer: {
         copy: string;
@@ -113,20 +117,11 @@ export const translateArray: LanguageTranslate[] = [
                     },
                 ],
             },
+            contact: {
+                title: "Entre em contato",
+                content: "Se caso estiver com alguma duvida, por favor nao exite e entre em contato."
+            },
             projects: [
-                {
-                    name: "Site para Designer",
-                    link: "https://clara-design.vercel.app/",
-                    tecnologies: [
-                        { name: "React.js", icon: <SiReact className="scale-125" /> },
-                        { name: "Next.js", icon: <SiNextdotjs className="scale-125" /> },
-                        { name: "Tailwind", icon: <SiTailwindcss className="scale-125" /> },
-                        { name: "TypeScript", icon: <SiTypescript className="scale-125" /> },
-                    ],
-                    description: "Um Portfólio Feito Para Uma Designer",
-                    image: "siteDesign.png",
-                    pos: "bg-center",
-                },
                 {
                     name: "Celular",
                     link: "https://celular-react.vercel.app/",
@@ -139,6 +134,19 @@ export const translateArray: LanguageTranslate[] = [
                     description: "Um Projeto Feito Para Ser Usado Em Um Jogo",
                     image: "celularReact.png",
                     pos: "bg-right",
+                },
+                {
+                    name: "Site para Designer",
+                    link: "https://clara-design.vercel.app/",
+                    tecnologies: [
+                        { name: "React.js", icon: <SiReact className="scale-125" /> },
+                        { name: "Next.js", icon: <SiNextdotjs className="scale-125" /> },
+                        { name: "Tailwind", icon: <SiTailwindcss className="scale-125" /> },
+                        { name: "TypeScript", icon: <SiTypescript className="scale-125" /> },
+                    ],
+                    description: "Um Portfólio Feito Para Uma Designer",
+                    image: "siteDesign.png",
+                    pos: "bg-center",
                 },
             ],
             seeProject: "Ver Projeto",
@@ -229,6 +237,10 @@ export const translateArray: LanguageTranslate[] = [
                         name: "n 2024, I began studying Next.js and React, and that’s when I fell even more in love with the programming world. I connected with these “modern” technologies and started developing personal projects, exploring new possibilities in web development."
                     },
                 ],
+            },
+            contact: {
+                title: "Contact Me",
+                content: "If you have any questions, please don't hesitate to contact me.",
             },
             footer: {
                 copy: "Made in Sao Paulo, Brazil",

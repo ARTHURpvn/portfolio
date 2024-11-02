@@ -74,7 +74,6 @@ const Home = () => {
         <h1 className={`${geistSans.className} text-4xl font-bold`}> {translate?.titles.projects} </h1>
 
         <Projects indexValue={0}/>
-        <Projects indexValue={1}/>
 
         <div className="flex">
           
