@@ -1,5 +1,4 @@
 'use client';
-
 import localFont from "next/font/local";
 import { MdLocationPin  } from "react-icons/md";
 import { IoLogoGithub, IoLogoInstagram,IoLogoLinkedin  } from "react-icons/io";
@@ -10,7 +9,7 @@ import Experience from "./components/experience";
 import Footer from "./components/footer";
 import Projects from "./components/projects";
 import { translateArray } from "./components/translate";
-import { useEffect, useState } from "react";
+import {  useLangContext } from "./context/LangContext";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,22 +22,15 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
-
 const Home = () => {
-  const [translate, setTranslate] = useState(translateArray.find((item) => item.lang === 'pt-br')?.translate.home);
-  useEffect(() => {
-      const checkLocalStorage = () => {
-          const value = localStorage.getItem('lang');
-          setTranslate(translateArray.find((item) => item.lang === value)?.translate.home)
-      };
-      const intervalId = setInterval(checkLocalStorage, 1000);
-      return () => clearInterval(intervalId);
-  }, []);
+  const {lang} = useLangContext();
+  const translate = translateArray.find((item) => item.lang === lang)?.translate.home;
+
 
   return (
     <main className={`h-screen w-5/6 mx-auto`}>
       <Header page="home"/>
-
+      
       <section className="flex flex-col mx-auto mt-16 border rounded-lg border-gray-600 w-1/2 max-[580px]:w-5/6 max-[580px]:p-3 p-6">
         <div className="flex items-center justify-between w-full">
           <h1 className={`${geistSans.className} text-4xl font-bold max-[580px]:text-2xl`}> Arthur Pavan </h1>
@@ -77,7 +69,7 @@ const Home = () => {
 
         <div className="flex">
           
-          <a href="" className={`${geistSans.className} text-blue-600 dark:text-blue-400 text-lg mt-3 max-[580px]:text-[.9rem]`} > {translate?.main.more} </a>
+          <a href="/pages/project" className={`${geistSans.className} text-blue-600 dark:text-blue-400 text-lg mt-3 max-[580px]:text-[.9rem]`} > {translate?.main.more} </a>
         </div>
       </section>
 

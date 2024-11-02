@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import localFont from "next/font/local";
+import { useLangContext } from "../context/LangContext";
 
 const geistMono = localFont({
     src: "../fonts/GeistMonoVF.woff",
@@ -8,10 +9,12 @@ const geistMono = localFont({
 });
 
 const Translate = () => {
-    const [language, setLanguage] = useState<string >("pt-br");
+    const { lang, dispatch } = useLangContext();
+    const [language, setLanguage] = useState<string >(lang);
+
     const toggleLanguage = () => {
-        setLanguage(localStorage.getItem("lang") === "pt-br" ? "en" : "pt-br");
-        console.log(localStorage.getItem("lang"))
+        dispatch({ type: "setLang", payload: language == "pt-br" ? "en" : "pt-br" });
+        setLanguage(language == "pt-br" ? "en" : "pt-br");
     };
 
     useEffect(() => {

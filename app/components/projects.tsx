@@ -1,8 +1,10 @@
+'use client';
 import { GrLinkNext } from "react-icons/gr";
 import { translateArray } from "./translate";
 import {  useEffect, useState } from "react";
 
 import localFont from "next/font/local";
+import { useLangContext } from "../context/LangContext";
 const geistSans = localFont({
     src: "../fonts/GeistVF.woff",
     variable: "--font-geist-sans",
@@ -14,16 +16,9 @@ interface ProjectsProps {
 }
 
 const Projects = ({indexValue}: ProjectsProps)  => {
-    const [translate, setTranslate] = useState(translateArray.find((item) => item.lang === 'pt-br')?.translate);
-    useEffect(() => {
-        const checkLocalStorage = () => {
-            const value = localStorage.getItem('lang');
-            setTranslate(translateArray.find((item) => item.lang === value)?.translate)
-            
-        };
-        const intervalId = setInterval(checkLocalStorage, 1000);
-        return () => clearInterval(intervalId);
-    }, []);
+    const {lang} = useLangContext();
+    const translate = translateArray.find((item) => item.lang === lang)?.translate;
+    
     return (
         translate && (
             <div className={`group flex flex-col mx-auto relative text-white mt-6 overflow-hidden w-full h-[55vh] max-[580px]:h-[50vh] cursor-pointer rounded-lg border border-gray-600 bg-cover ${translate.projects[indexValue].pos} bg-no-repeat`}

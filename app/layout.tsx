@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/react"
+import { LangProvider } from "./context/LangContext";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -15,7 +16,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "ARTHURpvn | Inicio",
+  title: "ARTHURpvn",
   description: "Portfolio de um desenvolvedor front-end apaixonado por tecnologia.",
   keywords: ['portfolio', 'front-end', 'arthurpvn', 'typescript', 'react', 'nextjs'],
   verification: {
@@ -29,13 +30,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-        <Analytics />
-      </body>
-    </html>
+    <LangProvider>
+      <html lang="pt-br">
+        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+          {children}
+          <Analytics />
+        </body>
+      </html>
+    </LangProvider>
   );
 }

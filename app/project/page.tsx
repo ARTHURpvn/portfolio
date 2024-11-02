@@ -1,11 +1,11 @@
 'use client';
 import localFont from "next/font/local";
-import { translateArray } from "../components/translate";
-import { useEffect, useState } from "react";
+import { translateArray } from "@/app/components/translate";
 
-import Header from "../components/header";
-import { AllProjects } from "../components/projects";
-import Footer from "../components/footer";
+import Header from "@/app/components/header";
+import Footer from "@/app/components/footer";
+import { AllProjects } from "@/app/components/projects";
+import { useLangContext } from "../context/LangContext";
 
 
 const geistSans = localFont({
@@ -15,15 +15,8 @@ const geistSans = localFont({
 });
 
 const About = () => {
-    const [translate, setTranslate] = useState(translateArray.find((item) => item.lang === 'pt-br')?.translate);
-    useEffect(() => {
-        const checkLocalStorage = () => {
-            const value = localStorage.getItem('lang');
-            setTranslate(translateArray.find((item) => item.lang === value)?.translate)
-        };
-        const intervalId = setInterval(checkLocalStorage, 1000);
-        return () => clearInterval(intervalId);
-    }, []);
+    const {lang} = useLangContext();
+    const translate = translateArray.find((item) => item.lang === lang)?.translate
   
     return (
         <main className={`h-screen w-5/6 mx-auto`}>

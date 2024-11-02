@@ -1,6 +1,5 @@
 'use client';
 import localFont from "next/font/local";
-import { useState, useEffect } from "react";
 
 import { translateArray } from "./translate";
 import Translate from "./lang";
@@ -8,6 +7,7 @@ import Translate from "./lang";
 import Theme from "./theme";
 import Link from "next/link";
 import Head from "next/head";
+import { useLangContext } from "../context/LangContext";
 
 const geistSans = localFont({
     src: "../fonts/GeistVF.woff",
@@ -24,15 +24,8 @@ const geistMono = localFont({
 export let pageLoc : string
 
 const Header = ({page}: {page: string}) => {
-    const [translate, setTranslate] = useState(translateArray.find((item) => item.lang === 'pt-br')?.translate);
-    useEffect(() => {
-        const checkLocalStorage = () => {
-            const value = localStorage.getItem('lang');
-            setTranslate(translateArray.find((item) => item.lang === value)?.translate)
-        };
-        const intervalId = setInterval(checkLocalStorage, 1000);
-        return () => clearInterval(intervalId);
-    }, []);
+    const {lang} = useLangContext();
+    const translate = translateArray.find((item) => item.lang === lang)?.translate;
 
     const name : string = "<ARTHURpvn />";
     return (

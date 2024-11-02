@@ -2,7 +2,7 @@
 import localFont from "next/font/local";
 import { FaRegCopyright, FaHeart  } from "react-icons/fa";
 import { translateArray } from "./translate";
-import {  useEffect, useState } from "react";
+import { useLangContext } from "../context/LangContext";
 
 const geistSans = localFont({
     src: "../fonts/GeistVF.woff",
@@ -12,19 +12,8 @@ const geistSans = localFont({
 
 
 const Footer = () => {
-    const [translate, setTranslate] = useState(translateArray.find((item) => item.lang === 'pt-br')?.translate.footer);
-    const useLocalStorageChecker = () => {
-      useEffect(() => {
-          const checkLocalStorage = () => {
-              const value = localStorage.getItem('lang');
-              setTranslate(translateArray.find((item) => item.lang === value)?.translate.footer)
-              
-          };
-          const intervalId = setInterval(checkLocalStorage, 1000);
-          return () => clearInterval(intervalId);
-      }, []);
-    };
-    useLocalStorageChecker();
+    const {lang} = useLangContext();
+    const translate = translateArray.find((item) => item.lang === lang)?.translate.footer;
     return (
         translate && (
             <footer className={`flex flex-col mx-auto mt-20 w-1/2 max-[580px]:w-5/6 max-[580px]:text-[.7rem] justify-center items-center border-t gap-2 border-gray-600 py-10 ${geistSans.className} font-light`}>

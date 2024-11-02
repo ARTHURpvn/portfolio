@@ -1,6 +1,6 @@
 import localFont from "next/font/local";
 import { translateArray } from "./translate";
-import { useEffect, useState } from "react";
+import { useLangContext } from "../context/LangContext";
 
 const geistSans = localFont({
     src: "../fonts/GeistVF.woff",
@@ -15,18 +15,8 @@ const geistSans = localFont({
   });
   
 const Experience = () => {  
-    const [translate, setTranslate] = useState(translateArray.find((item) => item.lang === 'pt-br')?.translate.experience);
-    const useLocalStorageChecker = () => {
-      useEffect(() => {
-          const checkLocalStorage = () => {
-              const value = localStorage.getItem('lang');
-              setTranslate(translateArray.find((item) => item.lang === value)?.translate.experience)
-          };
-          const intervalId = setInterval(checkLocalStorage, 1000);
-          return () => clearInterval(intervalId);
-      }, []);
-    };
-    useLocalStorageChecker();
+    const {lang} = useLangContext();
+    const translate = translateArray.find((item) => item.lang === lang)?.translate.experience;
     return (
         <ul className="mt-6 mx-6">
             {translate &&

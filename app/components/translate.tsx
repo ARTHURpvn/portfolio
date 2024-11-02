@@ -119,7 +119,7 @@ export const translateArray: LanguageTranslate[] = [
             },
             contact: {
                 title: "Entre em contato",
-                content: "Se caso estiver com alguma duvida, por favor nao exite e entre em contato."
+                content: "Se caso estiver com alguma dúvida, não exite e entre em contato comigo."
             },
             projects: [
                 {
@@ -193,19 +193,7 @@ export const translateArray: LanguageTranslate[] = [
                 },
             ],
             projects: [
-                {
-                    name: "WebSite for Designer",
-                    link: "https://clara-design.vercel.app/",
-                    tecnologies: [
-                        { name: "React.js", icon: <SiReact className="scale-125" /> },
-                        { name: "Next.js", icon: <SiNextdotjs className="scale-125" /> },
-                        { name: "Tailwind", icon: <SiTailwindcss className="scale-125" /> },
-                        { name: "TypeScript", icon: <SiTypescript className="scale-125" /> },
-                    ],
-                    description: "Portfolio made for a designer",
-                    image: "siteDesign.png",
-                    pos: "bg-center",
-                },
+
                 {
                     name: "CellPhone",
                     link: "https://celular-react.vercel.app/",
@@ -218,6 +206,19 @@ export const translateArray: LanguageTranslate[] = [
                     description: "Project made for being used in a game",
                     image: "celularReact.png",
                     pos: "bg-right",
+                },
+                {
+                    name: "WebSite for Designer",
+                    link: "https://clara-design.vercel.app/",
+                    tecnologies: [
+                        { name: "React.js", icon: <SiReact className="scale-125" /> },
+                        { name: "Next.js", icon: <SiNextdotjs className="scale-125" /> },
+                        { name: "Tailwind", icon: <SiTailwindcss className="scale-125" /> },
+                        { name: "TypeScript", icon: <SiTypescript className="scale-125" /> },
+                    ],
+                    description: "Portfolio made for a designer",
+                    image: "siteDesign.png",
+                    pos: "bg-center",
                 },
             ],
             seeProject: "See Project",

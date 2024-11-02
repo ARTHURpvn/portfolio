@@ -1,12 +1,14 @@
 'use client';
-import Footer from "../components/footer";
-import Header from "../components/header";
+import Footer from "@/app/components/footer";
+import Header from "@/app/components/header";
 import localFont from "next/font/local";
-import { translateArray } from "../components/translate";
-import { useEffect, useState } from "react";
+import { translateArray } from "@/app/components/translate";
+
+import Head from "next/head";
 
 import { IoLogoWhatsapp, IoLogoLinkedin  } from "react-icons/io";
 import { RiInstagramFill } from "react-icons/ri";
+import { useLangContext } from "../context/LangContext";
 
 const geistSans = localFont({
     src: "../fonts/GeistVF.woff",
@@ -15,18 +17,12 @@ const geistSans = localFont({
 });
 
 const Contact = () => {
-    const [translate, setTranslate] = useState(translateArray.find((item) => item.lang === 'pt-br')?.translate.contact);
-    useEffect(() => {
-        const checkLocalStorage = () => {
-            const value = localStorage.getItem('lang');
-            setTranslate(translateArray.find((item) => item.lang === value)?.translate.contact)
-        };
-        const intervalId = setInterval(checkLocalStorage, 1000);
-        return () => clearInterval(intervalId);
-    }, []);
+    const {lang} = useLangContext();
+    const translate = translateArray.find((item) => item.lang === lang)?.translate.contact;
 
     return (
         <main className={`h-screen w-5/6 mx-auto`}>
+            <Head> <title> ARTHURpvn | Contact </title></Head>
             <Header page="contact"/>
 
             <section className="flex flex-col mx-auto mt-20 w-1/2 max-[580px]:w-5/6 border rounded-lg border-gray-600 p-4 py-5">
