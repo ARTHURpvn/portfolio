@@ -16,7 +16,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "ARTHURpvn",
+  title: "ARTHURpvn " ,
   description: "Portfolio de um desenvolvedor front-end apaixonado por tecnologia.",
   keywords: ['portfolio', 'front-end', 'arthurpvn', 'typescript', 'react', 'nextjs'],
   verification: {

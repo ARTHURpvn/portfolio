@@ -36,7 +36,7 @@ const Home = () => {
           <h1 className={`${geistSans.className} text-4xl font-bold max-[580px]:text-2xl`}> Arthur Pavan </h1>
 
           <nav className="flex gap-5 max-[580px]:gap-2">
-            <a href="https://www.linkedin.com/in/arthur-dos-santos-pavan-b39386243/" className="flex items-center rounded-lg border border-gray-600 p-3"> <IoLogoLinkedin className="scale-150 max-[580px]:scale-125"/> </a>
+            <a href="https://www.linkedin.com/in/arthurpvn/" className="flex items-center rounded-lg border border-gray-600 p-3"> <IoLogoLinkedin className="scale-150 max-[580px]:scale-125"/> </a>
             <a href="https://github.com/ARTHURpvn" className="flex items-center rounded-lg border border-gray-600 p-3"> <IoLogoGithub className="scale-150 max-[580px]:scale-125"/> </a>
             <a href="https://www.instagram.com/arthur.pvn/" className="flex items-center rounded-lg border border-gray-600 p-3"> <IoLogoInstagram className="scale-150 max-[580px]:scale-125"/> </a>
           </nav>
@@ -69,7 +69,7 @@ const Home = () => {
 
         <div className="flex">
           
-          <a href="/pages/project" className={`${geistSans.className} text-blue-600 dark:text-blue-400 text-lg mt-3 max-[580px]:text-[.9rem]`} > {translate?.main.more} </a>
+          <a href="/project" className={`${geistSans.className} text-blue-600 dark:text-blue-400 text-lg mt-3 max-[580px]:text-[.9rem]`} > {translate?.main.more} </a>
         </div>
       </section>
 
