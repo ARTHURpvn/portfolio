@@ -41,19 +41,19 @@ export default function ContactEmail() {
     {
       name: translate?.input[1].name,
       type: "email",
-      inputName: "user_email",
+      inputName: "email_us",
       placeholder: translate?.input[1].placeholder,
     },
     {
       name: translate?.input[2].name,
       type: "phone",
-      inputName: "phone",
+      inputName: "telefone",
       placeholder: translate?.input[2].placeholder,
     },
     {
       name: translate?.input[3].name,
       type: "text",
-      inputName: "subject",
+      inputName: "assunto",
       placeholder: translate?.input[3].placeholder,
     },
     {
