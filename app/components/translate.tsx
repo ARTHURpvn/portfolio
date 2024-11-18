@@ -62,7 +62,7 @@ type Translate = {
     title: string;
     content: string;
     input: Input[];
-    button: string
+    button: string;
   };
   seeProject: string;
   footer: {
@@ -94,7 +94,7 @@ export const translateArray: LanguageTranslate[] = [
         },
         main: {
           country: "São Paulo, Brasil",
-          desc: "Olá! Tenho 18 anos, sou programador front-end há 3 anos, consigo transformar suas ideias em projetos modernos.",
+          desc: "Olá, sou Arthur, apaixonado por transformar ideias em realidade digital. Com conhecimentos em React, TypeScript e desenvolvimento front-end, já criei diversos projetos, incluindo uma HUD para jogos e mini-games interativos. Sempre pronto para explorar novas tecnologias e aprimorar minhas habilidades.",
           more: "Mais...",
         },
       },
@@ -121,13 +121,13 @@ export const translateArray: LanguageTranslate[] = [
         },
         resume: [
           {
-            name: "Desde pequeno, sou fascinado pelo mundo da tecnologia. Quando criança, eu não sabia programar ou consertar o computador, mas sempre observava atentamente o técnico quando ele era chamado, aprendendo um pouco sobre como as coisas funcionavam.",
+            name: "Estou concluindo um curso técnico em Informática para Internet na Etec, onde desenvolvo habilidades com foco em tecnologias modernas como React e TypeScript. Mesmo sem estar oficialmente no mercado, mantenho-me ativo em projetos relevantes, como a criação de uma HUD e mini-games para um projeto GTA RP, onde utilizo React e Lua para construir interfaces interativas e dinâmicas.",
           },
           {
-            name: "Comecei a me identificar como desenvolvedor front-end durante o ensino médio técnico. Em 2021, iniciei meus estudos em lógica de programação e aprendi HTML e CSS. No ano seguinte, em 2022, aprofundei-me em JavaScript, buscando melhorar cada vez mais minhas habilidades no desenvolvimento de sites.",
+            name: "No meu tempo livre, procuro novos conhecimentos e oportunidades de aplicar o que aprendo. Tenho um forte interesse em transformar ideias em realidade digital e estou sempre em busca do próximo desafio.",
           },
           {
-            name: "Em 2024, comecei a estudar Next.js e React, e foi aí que me apaixonei ainda mais pelo mundo da programação. Identifiquei-me com essas tecnologias 'modernas' e passei a desenvolver projetos pessoais, explorando novas possibilidades no desenvolvimento web.",
+            name: "Estou entusiasmado para contribuir com minha criatividade e conhecimentos técnicos em projetos que façam a diferença. Vamos conectar e explorar o que posso agregar ao seu time!",
           },
         ],
       },
@@ -177,6 +177,22 @@ export const translateArray: LanguageTranslate[] = [
           pos: "bg-right",
         },
         {
+          name: "Livro de receitas",
+          link: "https://clara-design.vercel.app/",
+          tecnologies: [
+            { name: "React.js", icon: <SiReact className="scale-125" /> },
+            { name: "Next.js", icon: <SiNextdotjs className="scale-125" /> },
+            { name: "Tailwind", icon: <SiTailwindcss className="scale-125" /> },
+            {
+              name: "TypeScript",
+              icon: <SiTypescript className="scale-125" />,
+            },
+          ],
+          description: "Um WebSite com receitas adicionadas pelos usuários",
+          image: "siteRecipe.png",
+          pos: "",
+        },
+        {
           name: "Site para Designer",
           link: "https://clara-design.vercel.app/",
           tecnologies: [
@@ -218,7 +234,7 @@ export const translateArray: LanguageTranslate[] = [
         },
         main: {
           country: "Sao Paulo, Brazil",
-          desc: "Hello there! I'm 18 years old, I'm a front-end developer for 3 years, I can transform your ideas into modern projects.",
+          desc: "Hello there, I’m Arthur, passionate about transforming ideas into digital reality. Skilled in React, TypeScript, and front-end development, I've created a range of projects, including a game HUD and interactive mini-games. Always ready to explore new technologies and enhance my abilities.",
           more: "More...",
         },
       },
@@ -254,6 +270,22 @@ export const translateArray: LanguageTranslate[] = [
           description: "Project made for being used in a game",
           image: "celularReact.png",
           pos: "bg-right",
+        },
+        {
+          name: "Recipe Book",
+          link: "https://clara-design.vercel.app/",
+          tecnologies: [
+            { name: "React.js", icon: <SiReact className="scale-125" /> },
+            { name: "Next.js", icon: <SiNextdotjs className="scale-125" /> },
+            { name: "Tailwind", icon: <SiTailwindcss className="scale-125" /> },
+            {
+              name: "TypeScript",
+              icon: <SiTypescript className="scale-125" />,
+            },
+          ],
+          description: "WebSite with recipes added by users",
+          image: "siteRecipe.png",
+          pos: "",
         },
         {
           name: "WebSite for Designer",
