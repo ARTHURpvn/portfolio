@@ -22,9 +22,9 @@ const Translate = () => {
     }, [language])
 
     return (
-        <a className={`font-bold ${geistMono.className} cursor-pointer max-[580px]:font-semibold text-sm w-24 text-end hover:text-orange-400 dark:hover:text-orange-200 duration-300`} onClick={toggleLanguage}>
+        <button className={`font-bold ${geistMono.className} cursor-pointer max-[580px]:font-semibold text-sm w-24 text-end hover:text-orange-400 dark:hover:text-orange-200 duration-300`} onClick={toggleLanguage}>
             {language == "pt-br" ? "English" : "Português"}
-        </a>
+        </button>
 
     )
 }

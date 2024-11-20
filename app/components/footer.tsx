@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { FaRegCopyright, FaHeart  } from "react-icons/fa";
 import { translateArray } from "./translate";
 import { useLangContext } from "../context/LangContext";
+import Link from "next/link";
 
 const geistSans = localFont({
     src: "../fonts/GeistVF.woff",
@@ -25,11 +26,11 @@ const Footer = () => {
                     <div className="flex items-center gap-1">
                         <p> { translate.desc } </p> <FaHeart /> <p> { translate.next } </p>
                         <div className="group flex flex-col relative w-max">
-                            <a href="https://nextjs.org/" className="text-blue-600 dark:text-blue-400"> Next.js </a>
+                            <Link href="https://nextjs.org/" className="text-blue-600 dark:text-blue-400"> Next.js </Link>
                             <div className="h-[2px] w-full absolute left-0 bottom-0 bg-blue-600 dark:bg-blue-400 scale-x-0 group-hover:scale-x-100 duration-300 ease-in"></div>
                         </div>
                         <div className="group flex flex-col relative w-max">
-                            <a href="https://react.dev/" className="text-blue-600 dark:text-blue-400"> React </a>
+                            <Link href="https://react.dev/" className="text-blue-600 dark:text-blue-400"> React </Link>
                             <div className="h-[2px] w-full absolute left-0 bottom-0 bg-blue-600 dark:bg-blue-400 scale-x-0 group-hover:scale-x-100 duration-300 ease-in"></div>
                         </div>
                     </div>
@@ -37,7 +38,7 @@ const Footer = () => {
                     <div className="flex items-center gap-1">
                         <p>  { translate.projects } </p>
                         <div className="group flex flex-col relative w-max">
-                            <a href="https://github.com/ARTHURpvn" className="text-blue-600 dark:text-blue-400"> GitHub </a>
+                            <Link href="https://github.com/ARTHURpvn" className="text-blue-600 dark:text-blue-400"> GitHub </Link>
                             <div className="h-[2px] w-full absolute left-0 bottom-0 bg-blue-600 dark:bg-blue-400 scale-x-0 group-hover:scale-x-100 duration-300 ease-in"></div>
                         </div>
                     </div>

@@ -7,6 +7,7 @@ import { IoLogoWhatsapp, IoLogoLinkedin } from "react-icons/io";
 import { RiInstagramFill } from "react-icons/ri";
 import { useLangContext } from "../context/LangContext";
 import ContactEmail from "../components/contact";
+import Link from "next/link";
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -36,24 +37,24 @@ const Contact = () => {
         </p>
 
         <div className="flex items-center justify-around mt-12 max-[580px]:mt-6 mb-6 max-[580px]:mb-3">
-          <a
+          <Link
             className="text-blue-800 hover:text-blue-600 dark:text-blue-800 dark:hover:text-blue-600 duration-300"
             href="https://wa.me/5516994611405?text=Ol%C3%A1%20Arthur%2C%20Gostei%20do%20seu%20Portf%C3%B3lio%20e%20conversar%20sobre%20uma%20ideia%20de%20projeto%20que%20tive!"
           >
             <IoLogoWhatsapp className="text-4xl scale-150 max-[580px]:scale-125" />
-          </a>
-          <a
+          </Link>
+          <Link
             className="text-blue-800 hover:text-blue-600 dark:text-blue-800 dark:hover:text-blue-600 duration-300"
             href="https://www.instagram.com/direct/t/116347366416759/"
           >
             <RiInstagramFill className="text-4xl scale-150 max-[580px]:scale-125" />
-          </a>
-          <a
+          </Link>
+          <Link
             className="text-blue-800 hover:text-blue-600 dark:text-blue-800 dark:hover:text-blue-600 duration-300"
             href="https://www.linkedin.com/in/arthurpvn/"
           >
             <IoLogoLinkedin className="text-4xl scale-150 max-[580px]:scale-125" />
-          </a>
+          </Link>
         </div>
 
         <hr  className="border-gray-600 my-10"/>
