@@ -67,7 +67,7 @@ export default function ContactEmail() {
   return (
     <div className="mx-auto">
       <form onSubmit={sendEmail} className="flex flex-col items-end gap-6">
-        <div className="max-[580px]:flex items-start justify-center max-[580px]:flex-col grid grid-cols-2 gap-6 max-[580px]:ga-3">
+        <div className="max-lg:flex items-start justify-center max-lg:flex-col grid grid-cols-2 gap-6 max-lg:ga-3">
           {emailSender.map((item, index) => {
             return (
               <div

@@ -24,40 +24,40 @@ const Contact = () => {
     <main className={`h-screen w-5/6 mx-auto`}>
       <Header page="contact" />
 
-      <section className="flex flex-col mx-auto mt-20 w-1/2 max-[580px]:w-5/6 border rounded-lg border-gray-600 p-4 py-5">
+      <section className="flex flex-col mx-auto mt-20 w-1/2 max-lg:w-5/6 border rounded-lg border-gray-600 p-4 py-5">
         <h1
-          className={`${geistSans.className} text-4xl max-[580px]:text-2xl font-bold`}
+          className={`${geistSans.className} text-4xl max-lg:text-2xl font-bold`}
         >
           {translate?.title}
         </h1>
         <p
-          className={`${geistSans.className} text-xl max-[580px]:text-[1rem] text-justify text-gray-400 mt-2`}
+          className={`${geistSans.className} text-xl max-lg:text-[1rem] text-justify text-gray-400 mt-2`}
         >
           {translate?.content}
         </p>
 
-        <div className="flex items-center justify-around mt-12 max-[580px]:mt-6 mb-6 max-[580px]:mb-3">
+        <div className="flex items-center justify-around mt-12 max-lg:mt-6 mb-6 max-lg:mb-3">
           <Link
             className="text-blue-800 hover:text-blue-600 dark:text-blue-800 dark:hover:text-blue-600 duration-300"
             href="https://wa.me/5516994611405?text=Ol%C3%A1%20Arthur%2C%20Gostei%20do%20seu%20Portf%C3%B3lio%20e%20conversar%20sobre%20uma%20ideia%20de%20projeto%20que%20tive!"
           >
-            <IoLogoWhatsapp className="text-4xl scale-150 max-[580px]:scale-125" />
+            <IoLogoWhatsapp className="text-4xl scale-150 max-lg:scale-125" />
           </Link>
           <Link
             className="text-blue-800 hover:text-blue-600 dark:text-blue-800 dark:hover:text-blue-600 duration-300"
             href="https://www.instagram.com/direct/t/116347366416759/"
           >
-            <RiInstagramFill className="text-4xl scale-150 max-[580px]:scale-125" />
+            <RiInstagramFill className="text-4xl scale-150 max-lg:scale-125" />
           </Link>
           <Link
             className="text-blue-800 hover:text-blue-600 dark:text-blue-800 dark:hover:text-blue-600 duration-300"
             href="https://www.linkedin.com/in/arthurpvn/"
           >
-            <IoLogoLinkedin className="text-4xl scale-150 max-[580px]:scale-125" />
+            <IoLogoLinkedin className="text-4xl scale-150 max-lg:scale-125" />
           </Link>
         </div>
 
-        <hr  className="border-gray-600 my-10"/>
+        <hr className="border-gray-600 my-10" />
         <ContactEmail />
       </section>
       <Footer />

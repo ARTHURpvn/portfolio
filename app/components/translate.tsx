@@ -9,6 +9,10 @@ type Tecnology = {
   name: string;
   icon: JSX.Element;
 };
+
+type Image = {
+  url: string;
+};
 type Experience = {
   name: string;
   link: string;
@@ -16,11 +20,14 @@ type Experience = {
   description: string;
 };
 type Project = {
+  id: number;
   name: string;
   link: string;
   tecnologies: Tecnology[];
   description: string;
+  longDescription: string;
   image: string;
+  images: Image[];
   pos: string;
 };
 type Titles = {
@@ -161,6 +168,7 @@ export const translateArray: LanguageTranslate[] = [
       },
       projects: [
         {
+          id: 1,
           name: "Celular",
           link: "https://celular-react.vercel.app/",
           tecnologies: [
@@ -173,12 +181,22 @@ export const translateArray: LanguageTranslate[] = [
             },
           ],
           description: "Um Projeto Feito Para Ser Usado Em Um Jogo",
+          longDescription: "Neste projeto, eu recrio um celular usando o react e next. O projeto conta com uma calculadora totalmente funcional, quase igual a do dispositivo. Uma página de configuração onde pode escolher o fundo do celular, o tamanho, trocar entre modo claro ou escuro e trocar o modelo do celular (ainda não implementei o outro modelo). Além de um banco fictício . Esse projeto foi feito para usa-lo em um jogo, onde emitira sons de notificação e o banco mostrará o valor que o usuário tem. PROJETO AINDA EM DESENVOLVIMENTO",
           image: "celularReact.png",
+          images: [
+            {
+              url: "celularReact1.png",
+            },
+            {
+              url: "celularReact2.png",
+            },
+          ],
           pos: "bg-right",
         },
         {
+          id: 2,
           name: "Livro de receitas",
-          link: "https://clara-design.vercel.app/",
+          link: "",
           tecnologies: [
             { name: "React.js", icon: <SiReact className="scale-125" /> },
             { name: "Next.js", icon: <SiNextdotjs className="scale-125" /> },
@@ -189,10 +207,20 @@ export const translateArray: LanguageTranslate[] = [
             },
           ],
           description: "Um WebSite com receitas adicionadas pelos usuários",
+          longDescription: "Este projeto visa desenvolver uma plataforma web moderna e responsiva para um livro de receitas abrangente, utilizando tecnologias avançadas como React, Next.js e Prisma. A plataforma proporcionará uma experiência de usuário otimizada, permitindo que os usuários naveguem, armazenem e criem receitas. Uma funcionalidade de marcação de favoritos permitirá aos usuários acessar rapidamente suas receitas preferidas. Considerando as diversas preferências de privacidade, os criadores de conteúdo terão a opção de manter suas receitas privadas ou compartilhá-las publicamente com a comunidade.",
           image: "siteRecipe.png",
+          images: [
+            {
+              url: "siteRecipe.png",
+            },
+            {
+              url: "siteRecipe2.png",
+            },
+          ],
           pos: "",
         },
         {
+          id: 3,
           name: "Site para Designer",
           link: "https://clara-design.vercel.app/",
           tecnologies: [
@@ -205,7 +233,16 @@ export const translateArray: LanguageTranslate[] = [
             },
           ],
           description: "Um Portfólio Feito Para Uma Designer",
+          longDescription: "Nesse projeto criei uma landing page para uma designer, onde o site é totalmente responsivo e possui uma opção de troca de cor, para que o usuário escolha entre o tema escuro ou claro. O site tem um design moderno criado pela própria designer e conta com duas paginas, a pagina inicial onde tem os links para o whatsapp e o instagram, e outro link mostrando alguns dos projetos ja feito por ela.",
           image: "siteDesign.png",
+          images: [
+            {
+              url: "siteDesign.png",
+            },
+            {
+              url: "siteDesign2.png",
+            },
+          ],
           pos: "bg-center",
         },
       ],
@@ -256,6 +293,7 @@ export const translateArray: LanguageTranslate[] = [
       ],
       projects: [
         {
+          id: 1,
           name: "CellPhone",
           link: "https://celular-react.vercel.app/",
           tecnologies: [
@@ -268,12 +306,22 @@ export const translateArray: LanguageTranslate[] = [
             },
           ],
           description: "Project made for being used in a game",
+          longDescription: "In this project, I recreate a cell phone using react and next. The project has a fully functional calculator, almost the same as the device. A configuration page where you can choose the background of the phone, the size, switch between light or dark mode and change the model of the phone (not yet implemented the other model). In addition to a fictitious bank . This project was made to use it in a game, where it will emit notification sounds and the bank will show the value that the user has. PROJECT STILL IN DEVELOPMENT",
           image: "celularReact.png",
+          images: [
+            {
+              url: "celularReact1.png",
+            },
+            {
+              url: "celularReact2.png",
+            },
+          ],
           pos: "bg-right",
         },
         {
+          id: 2,
           name: "Recipe Book",
-          link: "https://clara-design.vercel.app/",
+          link: "",
           tecnologies: [
             { name: "React.js", icon: <SiReact className="scale-125" /> },
             { name: "Next.js", icon: <SiNextdotjs className="scale-125" /> },
@@ -284,10 +332,20 @@ export const translateArray: LanguageTranslate[] = [
             },
           ],
           description: "WebSite with recipes added by users",
+          longDescription: "This project aims to develop a modern and responsive web platform for a comprehensive cookbook using advanced technologies such as React, Next.js and Prisma. The platform will provide an optimized user experience, allowing users to browse, store and create recipes. A bookmarking feature will allow users to quickly access their preferred recipes. Considering the various privacy preferences, content creators will have the option to keep their revenues private or share them publicly with the community.",
           image: "siteRecipe.png",
+          images: [
+            {
+              url: "siteRecipe.png",
+            },
+            {
+              url: "siteRecipe2.png",
+            },
+          ],
           pos: "",
         },
         {
+          id: 3,
           name: "WebSite for Designer",
           link: "https://clara-design.vercel.app/",
           tecnologies: [
@@ -300,7 +358,16 @@ export const translateArray: LanguageTranslate[] = [
             },
           ],
           description: "Portfolio made for a designer",
+          longDescription: "In this project I created a landing page for a designer, where the site is fully responsive and has a color change option, so that the user chooses between the dark or light theme. The site has a modern design created by the designer herself and has two pages, the home page where she has links to whatsapp and instagram, and another link showing some of the projects already done by her.",
           image: "siteDesign.png",
+          images: [
+            {
+              url: "siteDesign.png",
+            },
+            {
+              url: "siteDesign2.png",
+            },
+          ],
           pos: "bg-center",
         },
       ],

@@ -2,7 +2,7 @@ PORTFÓLIO DE ARTHURpvn
 
 site como inspiracao: https://jzitnik.dev/en/
 
-max-[580px]
+max-lg
 
 cores:
 blue-400: #60a5fa
