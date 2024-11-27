@@ -37,9 +37,9 @@ const Home = () => {
           <h1 className={`${geistSans.className} text-4xl font-bold max-lg:text-2xl`}> Arthur Pavan </h1>
 
           <nav className="flex gap-5 max-lg:gap-2">
-            <Link href="https://www.linkedin.com/in/arthurpvn/" role="linkedin button" className="flex items-center rounded-lg border border-gray-600 p-3"> <IoLogoLinkedin className="scale-150 max-lg:scale-125"/> </Link>
-            <Link href="https://github.com/ARTHURpvn" role="github button" className="flex items-center rounded-lg border border-gray-600 p-3"> <IoLogoGithub className="scale-150 max-lg:scale-125"/> </Link>
-            <Link href="https://www.instagram.com/arthur.pvn/" role="instagram button" className="flex items-center rounded-lg border border-gray-600 p-3"> <IoLogoInstagram className="scale-150 max-lg:scale-125"/> </Link>
+            <Link href="https://www.linkedin.com/in/arthurpvn/" role="linkedin button" aria-label="linkedin button" className="flex items-center rounded-lg border border-gray-600 p-3"> <IoLogoLinkedin className="scale-150 max-lg:scale-125"/> </Link>
+            <Link href="https://github.com/ARTHURpvn" role="github button" aria-label="github button" className="flex items-center rounded-lg border border-gray-600 p-3"> <IoLogoGithub className="scale-150 max-lg:scale-125"/> </Link>
+            <Link href="https://www.instagram.com/arthur.pvn/" role="instagram button" aria-label="instagram button" className="flex items-center rounded-lg border border-gray-600 p-3"> <IoLogoInstagram className="scale-150 max-lg:scale-125"/> </Link>
           </nav>
         </div>
 

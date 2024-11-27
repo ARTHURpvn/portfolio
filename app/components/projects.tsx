@@ -39,7 +39,7 @@ const Projects = ({ indexValue }: ProjectsProps) => {
         <span className="bg-gradient-to-r absolute from-[#494a68] to-transparent w-full h-full -translate-x-[75%] group-hover:-translate-x-[70%] duration-500"></span>
         <span className="bg-gradient-to-l absolute from-[#494a68] to-transparent w-full h-full translate-x-[75%] group-hover:translate-x-[70%] duration-500"></span>
 
-        <ul className="absolute -bottom-12 left-6 group-hover:bottom-3 z-10 duration-500">
+        <div className="absolute -bottom-12 left-6 group-hover:bottom-3 z-10 duration-500">
           <h1
             className={`${geistSans.className} text-2xl font-bold max-lg:text-xl`}
           >
@@ -79,7 +79,7 @@ const Projects = ({ indexValue }: ProjectsProps) => {
               </button>
             </div>
           </div>
-        </ul>
+        </div>
       </div>
     )
   );

@@ -16,9 +16,9 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "ARTHURpvn " ,
-  description: "Portfolio de um desenvolvedor front-end apaixonado por tecnologia.",
-  keywords: ['portfolio', 'front-end', 'arthurpvn', 'typescript', 'react', 'nextjs'],
+  title: "Arthur PVN - Desenvolvedor Front-End | Portfólio Profissional",
+  description: "Portfólio de Arthur PVN, desenvolvedor front-end especializado em criar experiências digitais modernas e intuitivas. Descubra meus projetos e habilidades técnicas.",
+  keywords: ['portfólio desenvolvedor', 'front-end', 'react developer', 'desenvolvedor web', 'UI/UX design', 'JavaScript', 'arthurpvn', 'TypeScript'],
   verification: {
     google: "K8C9CMr7n5ryw_QC9VUWoy-FWkEv03uCm8r4FOrUnlA"
   },
