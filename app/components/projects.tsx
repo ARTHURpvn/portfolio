@@ -25,7 +25,7 @@ const Projects = ({ indexValue }: ProjectsProps) => {
   const handleClick = () => {
     dispatch({ type: "setProject", payload: indexValue + 1 });
     redirect(`/project`);
-  }
+  };
 
   return (
     translate && (
@@ -36,12 +36,12 @@ const Projects = ({ indexValue }: ProjectsProps) => {
         }}
       >
         <span className="bg-gradient-to-t absolute from-[#0e0e0e] from-50% to-transparent w-full h-full translate-y-[65%] group-hover:translate-y-[55%] max-lg:translate-y-[50%] max-lg:group-hover:translate-y-[45%] duration-500"></span>
-        <span className="bg-gradient-to-r absolute from-[#494a68] to-transparent w-full h-full -translate-x-[75%] group-hover:-translate-x-[70%] duration-500"></span>
-        <span className="bg-gradient-to-l absolute from-[#494a68] to-transparent w-full h-full translate-x-[75%] group-hover:translate-x-[70%] duration-500"></span>
+        <span className="bg-gradient-to-r absolute from-[#0e0e0e] to-transparent w-full h-full -translate-x-[75%] group-hover:-translate-x-[70%] duration-500"></span>
+        <span className="bg-gradient-to-l absolute from-[#0e0e0e] to-transparent w-full h-full translate-x-[75%] group-hover:translate-x-[70%] duration-500"></span>
 
         <div className="absolute -bottom-12 left-6 group-hover:bottom-3 z-10 duration-500">
           <h1
-            className={`${geistSans.className} text-2xl font-bold max-lg:text-xl`}
+            className={`${geistSans.className} text-blue-400 text-2xl font-bold max-lg:text-xl`}
           >
             {translate.projects[indexValue].name}
           </h1>
@@ -52,7 +52,7 @@ const Projects = ({ indexValue }: ProjectsProps) => {
                   return (
                     <li
                       key={index}
-                      className={`${geistSans.className} flex gap-2 text-lg max-lg:text-[.8rem] items-center px-3 py-1 max-lg:px-2 max-lg:py-0 rounded-lg border border-gray-600`}
+                      className={`${geistSans.className} bg-gray-900/50 flex gap-2 text-lg max-lg:text-[.8rem] items-center px-3 py-1 max-lg:px-2 max-lg:py-0 rounded-lg border border-gray-600`}
                     >
                       {item.icon}
                       <p> {item.name} </p>

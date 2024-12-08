@@ -6,7 +6,7 @@
   --background: #c3c7d3;
   --foreground: #ffffff00;
   --scrool-bg: #9ca0aa;
-  --primary: #fb923c;
+  --primary: #f1862e;
   --hover: #e77b22;
   --color: #131313;
   --duration: 50s;
@@ -44,7 +44,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 15px;
+  width: 13px;
 
 }
 ::-webkit-scrollbar-track {

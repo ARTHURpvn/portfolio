@@ -394,21 +394,21 @@ export const translateArray: LanguageTranslate[] = [
         content:
           "If you have any questions, please don't hesitate to contact me.",
         input: [
-          {
+                   {
             name: "Name",
             placeholder: "Enter your name...",
           },
           {
-            name: "Phone",
-            placeholder: "Enter your phone...",
+            name: "Email",
+            placeholder: "Enter your email...",
+          },
+          {
+            name: "Number",
+            placeholder: "Enter your number...",
           },
           {
             name: "Subject",
-            placeholder: "Enter the subject...",
-          },
-          {
-            name: "Email",
-            placeholder: "Enter your email...",
+            placeholder: "Enter your o subject...",
           },
           {
             name: "Message",

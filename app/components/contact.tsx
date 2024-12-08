@@ -46,7 +46,7 @@ export default function ContactEmail() {
     },
     {
       name: translate?.input[2].name,
-      type: "phone",
+      type: "number",
       inputName: "telefone",
       placeholder: translate?.input[2].placeholder,
     },
@@ -65,15 +65,15 @@ export default function ContactEmail() {
   ];
 
   return (
-    <div className="mx-auto">
+    <div className=" w-full">
       <form onSubmit={sendEmail} className="flex flex-col items-end gap-6">
-        <div className="max-lg:flex items-start justify-center max-lg:flex-col grid grid-cols-2 gap-6 max-lg:ga-3">
+        <div className="grid grid-cols-2 max-lg:grid-cols-1 gap-4 w-full">
           {emailSender.map((item, index) => {
             return (
               <div
                 key={index}
                 className={`flex flex-col space-y-1 w-full ${
-                  item.inputName == "message" && "col-span-2"
+                  item.inputName == "message" && "col-span-2 max-lg:col-span-1"
                 }`}
               >
                 <label htmlFor={item.inputName} className="text-lg">
@@ -84,6 +84,8 @@ export default function ContactEmail() {
                   <textarea
                     name={item.inputName}
                     placeholder={item.placeholder}
+                    required
+                    minLength={15}
                     rows={3}
                     className={`border bg-gray-600/15 border-gray-600 p-3 rounded-lg resize-none`}
                   />
@@ -92,6 +94,8 @@ export default function ContactEmail() {
                     type={item.type}
                     name={item.inputName}
                     placeholder={item.placeholder}
+                    required
+                    minLength={5}
                     className={`border bg-gray-600/15 border-gray-600 p-3 rounded-lg`}
                   />
                 )}
